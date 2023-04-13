@@ -74,11 +74,11 @@ namespace LibraryManagement.Desktop.StaffControls
             //    columnNames.Add(column.Name);
             //}
 
-         
+
 
             if (e.ColumnIndex == AuthorsDataGridView.Columns["UpdateButtonColumn"].Index && e.RowIndex >= 0)
             {
-                DialogResult result = MessageBox.Show("Do you want to update this author",
+                DialogResult result = MessageBox.Show("Do you want to update author",
                                                      "Update Confirmation",
                                                      MessageBoxButtons.YesNo,
                                                      MessageBoxIcon.Information);
@@ -98,7 +98,7 @@ namespace LibraryManagement.Desktop.StaffControls
             }
             if (e.ColumnIndex == AuthorsDataGridView.Columns["RemoveButtonColumn"].Index && e.RowIndex >= 0)
             {
-                DialogResult result = MessageBox.Show("Do you want to remove this author",
+                DialogResult result = MessageBox.Show("Do you want to remove author",
                                                     "Remove Confirmation",
                                                     MessageBoxButtons.YesNo,
                                                     MessageBoxIcon.Warning);
@@ -108,13 +108,14 @@ namespace LibraryManagement.Desktop.StaffControls
                     {
                         await _db.DeleteRecordAsync<AuthorModel>("Authors", id);
 
-                        MessageBox.Show("Author deleted successfully ",
+                        AuthorsDataGridView.DataSource = null;
+                        AuthorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
+
+                        MessageBox.Show("Author removed successfully ",
                                                  "Success",
                                                  MessageBoxButtons.OK,
                                                  MessageBoxIcon.Information);
 
-                        AuthorsDataGridView.DataSource = null;
-                        AuthorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
                     }
                     catch (Exception)
                     {
@@ -152,7 +153,55 @@ namespace LibraryManagement.Desktop.StaffControls
 
         private void AddBookButton_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Do you want to add a author",
+                                                   "New Author Confirmation",
+                                                   MessageBoxButtons.YesNo,
+                                                   MessageBoxIcon.Information);
 
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    ObjectId id = ObjectId.Empty;
+                    AddOrUpdateAuthor updateAuthor = new AddOrUpdateAuthor(_db, AuthorsDataGridView, id);
+                    updateAuthor.ShowDialog();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        private async void SearchBookButton_Click(object sender, EventArgs e)
+        {
+            string name = serachTextBox.Text;
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show("Please Enter Title", "Empty Feild", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                serachTextBox.Text = "";
+                
+
+            }
+            else
+            {
+                try
+                {
+                    AuthorsDataGridView.DataSource = await _db.SearchAsync<AuthorModel>("Authors", "nameColumn", name);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        private async void RefreshButton_Click(object sender, EventArgs e)
+        {
+            serachTextBox.Text = "";
+            AuthorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
         }
     }
 }

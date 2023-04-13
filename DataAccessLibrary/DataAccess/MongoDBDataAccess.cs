@@ -72,5 +72,15 @@ namespace DataAccessLibrary.DataAccess
             });
         }
 
+        public async Task<List<T>> SearchAsync<T>(string table, string columnName, string query)
+        {
+            var collection = _db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Regex(columnName, new BsonRegularExpression($".*{query}.*", "i"));
+            var result = await collection.FindAsync(filter);
+            return await result.ToListAsync();
+
+        }
+       
+
     }
 }

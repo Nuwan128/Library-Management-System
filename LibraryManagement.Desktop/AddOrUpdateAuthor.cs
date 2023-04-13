@@ -17,14 +17,14 @@ namespace LibraryManagement.Desktop
     {
         private readonly IMongoDBData _db;
         private readonly DataGridView _authorsDataGridView;
-        private readonly ObjectId _id;
+        private readonly ObjectId _id = ObjectId.Empty;
 
-        public AddOrUpdateAuthor(IMongoDBData db,DataGridView AuthorsDataGridView,ObjectId id)
+        public AddOrUpdateAuthor(IMongoDBData db, DataGridView AuthorsDataGridView, ObjectId id)
         {
-            InitializeComponent();
             _db = db;
-            _authorsDataGridView = AuthorsDataGridView;
             _id = id;
+            _authorsDataGridView = AuthorsDataGridView;
+            InitializeComponent();
         }
 
         private async void SaveAuthorButton_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace LibraryManagement.Desktop
             if (string.IsNullOrWhiteSpace(AutherNameTextBox.Text))
             {
                 MessageBox.Show("Please enter the author name", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+
             }
             else
             {
@@ -43,20 +43,25 @@ namespace LibraryManagement.Desktop
                 };
                 try
                 {
-                    
+                    if (_id == ObjectId.Empty)
+                    {
+
                         await _db.InsertRecordAsync<AuthorModel>("Authors", author);
+                        this.Hide();
                         MessageBox.Show("Author added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
 
-                    
-                        //await _db.UpsertRecordAsync<AuthorModel>("Authors",, author);
-                    
+                    }
+                    else
+                    {
+                        author.Id = _id;
+                        await _db.UpsertRecordAsync<AuthorModel>("Authors", author.Id, author);
+                        this.Hide();
+                        MessageBox.Show("Author updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-
-                    this.Hide();
+                    }
                     _authorsDataGridView.DataSource = null;
                     _authorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
+                    
                 }
                 catch (Exception ex)
                 {
@@ -64,7 +69,7 @@ namespace LibraryManagement.Desktop
                 }
             }
 
-       
+
 
         }
     }

@@ -39,8 +39,10 @@ namespace LibraryManagement.Desktop
 
             var services = scope.ServiceProvider;
 
+
             try
             {
+
                 ApplicationConfiguration.Initialize();
                 var frm = services.GetRequiredService<Splash>();
                 frm.ShowDialog();

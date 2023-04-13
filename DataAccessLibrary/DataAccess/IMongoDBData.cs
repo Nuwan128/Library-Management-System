@@ -9,6 +9,7 @@ namespace DataAccessLibrary.DataAccess
         Task InsertRecordAsync<T>(string table, T record);
         Task<T> LoadRecordByIdAsync<T>(string table, ObjectId id);
         Task<List<T>> LoadRecordsAsync<T>(string table);
+        Task<List<T>> SearchAsync<T>(string table, string columnName, string query);
         Task UpsertRecordAsync<T>(string table, ObjectId id, T record);
     }
 }
