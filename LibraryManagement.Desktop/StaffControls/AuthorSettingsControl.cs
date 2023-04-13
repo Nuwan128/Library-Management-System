@@ -1,5 +1,6 @@
 ﻿using DataAccessLibrary.DataAccess;
 using DataAccessLibrary.Models;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,15 +60,68 @@ namespace LibraryManagement.Desktop.StaffControls
             AuthorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
         }
 
-        private void AuthorsDataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+        private async void AuthorsDataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
+            var idCellValue = AuthorsDataGridView.Rows[e.RowIndex].Cells["idColumn"].Value.ToString();
+            var id = ObjectId.Parse(idCellValue);
+
+            //var name = AuthorsDataGridView.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+
+            //List<string> columnNames = new List<string>();
+
+            //foreach (DataGridViewColumn column in AuthorsDataGridView.Columns)
+            //{
+            //    columnNames.Add(column.Name);
+            //}
+
+         
+
             if (e.ColumnIndex == AuthorsDataGridView.Columns["UpdateButtonColumn"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("hello update");
+                DialogResult result = MessageBox.Show("Do you want to update this author",
+                                                     "Update Confirmation",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        AddOrUpdateAuthor updateAuthor = new AddOrUpdateAuthor(_db, AuthorsDataGridView, id);
+                        updateAuthor.ShowDialog();
+                    }
+                    catch (Exception)
+                    {
+                        throw new Exception();
+                    }
+
+                }
             }
-            else if (e.ColumnIndex == AuthorsDataGridView.Columns["RemoveButtonColumn"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == AuthorsDataGridView.Columns["RemoveButtonColumn"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("hello remove");
+                DialogResult result = MessageBox.Show("Do you want to remove this author",
+                                                    "Remove Confirmation",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        await _db.DeleteRecordAsync<AuthorModel>("Authors", id);
+
+                        MessageBox.Show("Author deleted successfully ",
+                                                 "Success",
+                                                 MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Information);
+
+                        AuthorsDataGridView.DataSource = null;
+                        AuthorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
+                    }
+                    catch (Exception)
+                    {
+                        throw new Exception();
+                    }
+
+                }
             }
         }
 

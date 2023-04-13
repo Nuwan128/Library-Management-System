@@ -43,12 +43,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             AuthorDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             AuthorsDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             authorModelBindingSource = new BindingSource(components);
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
             AddBookButton = new Guna.UI2.WinForms.Guna2Button();
+            idColumn = new DataGridViewTextBoxColumn();
+            nameColumn = new DataGridViewTextBoxColumn();
             AuthorDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AuthorsDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)authorModelBindingSource).BeginInit();
@@ -79,29 +79,28 @@
             dataGridViewCellStyle1.BackColor = Color.FromArgb(231, 241, 250);
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(43, 132, 180);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(45, 175, 219);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             AuthorsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AuthorsDataGridView.AutoGenerateColumns = false;
             AuthorsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            AuthorsDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 175, 219);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(43, 132, 180);
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(45, 175, 219);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(43, 132, 180);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AuthorsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AuthorsDataGridView.ColumnHeadersHeight = 40;
             AuthorsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            AuthorsDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn });
+            AuthorsDataGridView.Columns.AddRange(new DataGridViewColumn[] { idColumn, nameColumn });
             AuthorsDataGridView.DataSource = authorModelBindingSource;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(213, 218, 223);
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(43, 132, 180);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(45, 175, 219);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             AuthorsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
@@ -126,12 +125,12 @@
             AuthorsDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(231, 241, 250);
             AuthorsDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AuthorsDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Black;
-            AuthorsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(43, 132, 180);
+            AuthorsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             AuthorsDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.White;
             AuthorsDataGridView.ThemeStyle.BackColor = Color.White;
             AuthorsDataGridView.ThemeStyle.GridColor = Color.FromArgb(50, 56, 62);
-            AuthorsDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(45, 175, 219);
-            AuthorsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single;
+            AuthorsDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(43, 132, 180);
+            AuthorsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             AuthorsDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             AuthorsDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             AuthorsDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
@@ -142,22 +141,8 @@
             AuthorsDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AuthorsDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.Black;
             AuthorsDataGridView.ThemeStyle.RowsStyle.Height = 30;
-            AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(43, 132, 180);
+            AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // authorModelBindingSource
             // 
@@ -226,6 +211,20 @@
             AddBookButton.Text = "Add";
             AddBookButton.Click += AddBookButton_Click;
             // 
+            // idColumn
+            // 
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            // 
+            // nameColumn
+            // 
+            nameColumn.DataPropertyName = "Name";
+            nameColumn.HeaderText = "Name";
+            nameColumn.Name = "nameColumn";
+            nameColumn.ReadOnly = true;
+            // 
             // AuthorSettingsControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -246,11 +245,12 @@
 
         private Guna.UI2.WinForms.Guna2GroupBox AuthorDetailsGroupBox;
         private Guna.UI2.WinForms.Guna2DataGridView AuthorsDataGridView;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private BindingSource authorModelBindingSource;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button SearchBookButton;
         private Guna.UI2.WinForms.Guna2Button AddBookButton;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn idColumn;
+        private DataGridViewTextBoxColumn nameColumn;
     }
 }

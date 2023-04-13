@@ -19,15 +19,12 @@ namespace LibraryManagement.Desktop
         private readonly DataGridView _authorsDataGridView;
         private readonly ObjectId _id;
 
-        //private ObjectId id = "6065f5cf5c581a1d8c5b4e23"; 
-
         public AddOrUpdateAuthor(IMongoDBData db,DataGridView AuthorsDataGridView,ObjectId id)
         {
             InitializeComponent();
             _db = db;
             _authorsDataGridView = AuthorsDataGridView;
             _id = id;
-            
         }
 
         private async void SaveAuthorButton_Click(object sender, EventArgs e)
