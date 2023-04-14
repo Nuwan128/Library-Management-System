@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -41,17 +43,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             AuthorDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
+            RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             AuthorsDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            idColumn = new DataGridViewTextBoxColumn();
-            nameColumn = new DataGridViewTextBoxColumn();
             authorModelBindingSource = new BindingSource(components);
             serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
             AddBookButton = new Guna.UI2.WinForms.Guna2Button();
-            RefreshButton = new Guna.UI2.WinForms.Guna2Button();
+            idColumn = new DataGridViewTextBoxColumn();
+            nameColumn = new DataGridViewTextBoxColumn();
             AuthorDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AuthorsDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)authorModelBindingSource).BeginInit();
@@ -74,6 +74,26 @@
             AuthorDetailsGroupBox.Size = new Size(935, 466);
             AuthorDetailsGroupBox.TabIndex = 1;
             AuthorDetailsGroupBox.Text = "Author Details";
+            // 
+            // RefreshButton
+            // 
+            RefreshButton.BackColor = Color.FromArgb(45, 175, 219);
+            RefreshButton.BackgroundImage = Properties.Resources.refresh;
+            RefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
+            RefreshButton.CustomizableEdges = customizableEdges1;
+            RefreshButton.DisabledState.BorderColor = Color.DarkGray;
+            RefreshButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            RefreshButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            RefreshButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            RefreshButton.FillColor = Color.Transparent;
+            RefreshButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            RefreshButton.ForeColor = Color.White;
+            RefreshButton.Location = new Point(412, 55);
+            RefreshButton.Name = "RefreshButton";
+            RefreshButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            RefreshButton.Size = new Size(35, 26);
+            RefreshButton.TabIndex = 6;
+            RefreshButton.Click += RefreshButton_Click;
             // 
             // AuthorsDataGridView
             // 
@@ -149,20 +169,6 @@
             AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             // 
-            // idColumn
-            // 
-            idColumn.DataPropertyName = "Id";
-            idColumn.HeaderText = "Id";
-            idColumn.Name = "idColumn";
-            idColumn.ReadOnly = true;
-            // 
-            // nameColumn
-            // 
-            nameColumn.DataPropertyName = "Name";
-            nameColumn.HeaderText = "Name";
-            nameColumn.Name = "nameColumn";
-            nameColumn.ReadOnly = true;
-            // 
             // authorModelBindingSource
             // 
             authorModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.AuthorModel);
@@ -231,25 +237,19 @@
             AddBookButton.Text = "Add";
             AddBookButton.Click += AddBookButton_Click;
             // 
-            // RefreshButton
+            // idColumn
             // 
-            RefreshButton.BackColor = Color.FromArgb(45, 175, 219);
-            RefreshButton.BackgroundImage = Properties.Resources.refresh;
-            RefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
-            RefreshButton.CustomizableEdges = customizableEdges1;
-            RefreshButton.DisabledState.BorderColor = Color.DarkGray;
-            RefreshButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            RefreshButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            RefreshButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            RefreshButton.FillColor = Color.Transparent;
-            RefreshButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            RefreshButton.ForeColor = Color.White;
-            RefreshButton.Location = new Point(412, 55);
-            RefreshButton.Name = "RefreshButton";
-            RefreshButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            RefreshButton.Size = new Size(35, 26);
-            RefreshButton.TabIndex = 6;
-            RefreshButton.Click += RefreshButton_Click;
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            // 
+            // nameColumn
+            // 
+            nameColumn.DataPropertyName = "Name";
+            nameColumn.HeaderText = "Name";
+            nameColumn.Name = "nameColumn";
+            nameColumn.ReadOnly = true;
             // 
             // AuthorSettingsControl
             // 
@@ -276,8 +276,8 @@
         private Guna.UI2.WinForms.Guna2Button SearchBookButton;
         private Guna.UI2.WinForms.Guna2Button AddBookButton;
         private DataGridViewTextBoxColumn Id;
+        private Guna.UI2.WinForms.Guna2Button RefreshButton;
         private DataGridViewTextBoxColumn idColumn;
         private DataGridViewTextBoxColumn nameColumn;
-        private Guna.UI2.WinForms.Guna2Button RefreshButton;
     }
 }

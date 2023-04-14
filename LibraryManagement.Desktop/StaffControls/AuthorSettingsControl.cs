@@ -16,14 +16,12 @@ namespace LibraryManagement.Desktop.StaffControls
     public partial class AuthorSettingsControl : UserControl
     {
         private readonly IMongoDBData _db;
-
         public AuthorSettingsControl(IMongoDBData db)
         {
-            InitializeComponent();
             _db = db;
+            InitializeComponent();
             DisplayData();
         }
-
         private async void DisplayData()
         {
 
@@ -59,14 +57,10 @@ namespace LibraryManagement.Desktop.StaffControls
             AuthorsDataGridView.CellContentClick += AuthorsDataGridView_CellContentClick;
             AuthorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
         }
-
         private async void AuthorsDataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             var idCellValue = AuthorsDataGridView.Rows[e.RowIndex].Cells["idColumn"].Value.ToString();
             var id = ObjectId.Parse(idCellValue);
-
-
-
 
             if (e.ColumnIndex == AuthorsDataGridView.Columns["UpdateButtonColumn"].Index && e.RowIndex >= 0)
             {
@@ -117,7 +111,6 @@ namespace LibraryManagement.Desktop.StaffControls
                 }
             }
         }
-
         private void AuthorsDataGridView_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
         {
 
@@ -142,7 +135,6 @@ namespace LibraryManagement.Desktop.StaffControls
                 cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
         }
-
         private void AddBookButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Do you want to add a author",
@@ -160,12 +152,10 @@ namespace LibraryManagement.Desktop.StaffControls
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new Exception();
                 }
             }
         }
-
         private async void SearchBookButton_Click(object sender, EventArgs e)
         {
             string name = serachTextBox.Text;
@@ -173,23 +163,19 @@ namespace LibraryManagement.Desktop.StaffControls
             {
                 MessageBox.Show("Please Enter Title", "Empty Feild", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 serachTextBox.Text = "";
-                
-
             }
             else
             {
                 try
                 {
-                    AuthorsDataGridView.DataSource = await _db.SearchAsync<AuthorModel>("Authors", "nameColumn", name);
+                    AuthorsDataGridView.DataSource = await _db.SearchAsync<AuthorModel>("Authors","Name",name);
                 }
                 catch (Exception)
                 {
-
-                    throw;
+                    throw new Exception();
                 }
             }
         }
-
         private async void RefreshButton_Click(object sender, EventArgs e)
         {
             serachTextBox.Text = "";
