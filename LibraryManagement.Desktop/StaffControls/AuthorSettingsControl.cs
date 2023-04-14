@@ -65,14 +65,6 @@ namespace LibraryManagement.Desktop.StaffControls
             var idCellValue = AuthorsDataGridView.Rows[e.RowIndex].Cells["idColumn"].Value.ToString();
             var id = ObjectId.Parse(idCellValue);
 
-            //var name = AuthorsDataGridView.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-
-            //List<string> columnNames = new List<string>();
-
-            //foreach (DataGridViewColumn column in AuthorsDataGridView.Columns)
-            //{
-            //    columnNames.Add(column.Name);
-            //}
 
 
 
