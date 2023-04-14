@@ -21,6 +21,7 @@ namespace LibraryManagement.Desktop
             InitializeComponent();
             _db = db;
             DateTimeLable.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            UserNameTextBox.Focus();
         }
 
         private async void LogInButton_Click(object sender, EventArgs e)
@@ -37,7 +38,6 @@ namespace LibraryManagement.Desktop
                                 "Login Failed",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-
 
             }
             else

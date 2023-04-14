@@ -156,7 +156,7 @@ namespace LibraryManagement.Desktop.StaffControls
                 }
             }
         }
-        private async void SearchBookButton_Click(object sender, EventArgs e)
+        private async void SearchAuthorButton_Click(object sender, EventArgs e)
         {
             string name = serachTextBox.Text;
             if (string.IsNullOrWhiteSpace(name))
@@ -168,7 +168,7 @@ namespace LibraryManagement.Desktop.StaffControls
             {
                 try
                 {
-                    AuthorsDataGridView.DataSource = await _db.SearchAsync<AuthorModel>("Authors","Name",name);
+                    AuthorsDataGridView.DataSource = await _db.SearchAsync<AuthorModel>("Authors", "Name", name);
                 }
                 catch (Exception)
                 {

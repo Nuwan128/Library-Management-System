@@ -43,8 +43,8 @@
             NameLable = new Guna.UI2.WinForms.Guna2HtmlLabel();
             HeadingName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             hederpanel = new Guna.UI2.WinForms.Guna2Panel();
-            Heading = new Guna.UI2.WinForms.Guna2HtmlLabel();
             MinimiseButton = new Guna.UI2.WinForms.Guna2ControlBox();
+            Heading = new Guna.UI2.WinForms.Guna2HtmlLabel();
             CloseButton = new Guna.UI2.WinForms.Guna2ControlBox();
             hederpanel.SuspendLayout();
             SuspendLayout();
@@ -126,17 +126,6 @@
             hederpanel.Size = new Size(506, 30);
             hederpanel.TabIndex = 9;
             // 
-            // Heading
-            // 
-            Heading.BackColor = Color.Transparent;
-            Heading.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            Heading.ForeColor = Color.White;
-            Heading.Location = new Point(156, 7);
-            Heading.Name = "Heading";
-            Heading.Size = new Size(195, 20);
-            Heading.TabIndex = 0;
-            Heading.Text = "Library Management System V.01";
-            // 
             // MinimiseButton
             // 
             MinimiseButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -152,6 +141,17 @@
             MinimiseButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             MinimiseButton.Size = new Size(45, 30);
             MinimiseButton.TabIndex = 10;
+            // 
+            // Heading
+            // 
+            Heading.BackColor = Color.Transparent;
+            Heading.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            Heading.ForeColor = Color.White;
+            Heading.Location = new Point(156, 7);
+            Heading.Name = "Heading";
+            Heading.Size = new Size(195, 20);
+            Heading.TabIndex = 0;
+            Heading.Text = "Library Management System V.01";
             // 
             // CloseButton
             // 
@@ -182,6 +182,8 @@
             Controls.Add(SaveAuthorButton);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(506, 208);
+            MinimumSize = new Size(506, 208);
             Name = "AddOrUpdateAuthor";
             StartPosition = FormStartPosition.CenterParent;
             Text = "AddOrUpdate";

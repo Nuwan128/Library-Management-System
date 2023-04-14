@@ -46,12 +46,12 @@
             AuthorDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             AuthorsDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            authorModelBindingSource = new BindingSource(components);
-            serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
-            AddBookButton = new Guna.UI2.WinForms.Guna2Button();
             idColumn = new DataGridViewTextBoxColumn();
             nameColumn = new DataGridViewTextBoxColumn();
+            authorModelBindingSource = new BindingSource(components);
+            serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            SearchAuthorButton = new Guna.UI2.WinForms.Guna2Button();
+            AddBookButton = new Guna.UI2.WinForms.Guna2Button();
             AuthorDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AuthorsDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)authorModelBindingSource).BeginInit();
@@ -62,7 +62,7 @@
             AuthorDetailsGroupBox.Controls.Add(RefreshButton);
             AuthorDetailsGroupBox.Controls.Add(AuthorsDataGridView);
             AuthorDetailsGroupBox.Controls.Add(serachTextBox);
-            AuthorDetailsGroupBox.Controls.Add(SearchBookButton);
+            AuthorDetailsGroupBox.Controls.Add(SearchAuthorButton);
             AuthorDetailsGroupBox.Controls.Add(AddBookButton);
             AuthorDetailsGroupBox.CustomizableEdges = customizableEdges9;
             AuthorDetailsGroupBox.FillColor = SystemColors.ButtonFace;
@@ -108,10 +108,10 @@
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             AuthorsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AuthorsDataGridView.AutoGenerateColumns = false;
-            AuthorsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            AuthorsDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(43, 132, 180);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(43, 132, 180);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -136,7 +136,7 @@
             AuthorsDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(213, 218, 223);
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(213, 218, 223);
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
@@ -156,7 +156,7 @@
             AuthorsDataGridView.ThemeStyle.GridColor = Color.FromArgb(50, 56, 62);
             AuthorsDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(43, 132, 180);
             AuthorsDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            AuthorsDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            AuthorsDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             AuthorsDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             AuthorsDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             AuthorsDataGridView.ThemeStyle.HeaderStyle.Height = 40;
@@ -168,6 +168,20 @@
             AuthorsDataGridView.ThemeStyle.RowsStyle.Height = 30;
             AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             AuthorsDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            // 
+            // idColumn
+            // 
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            // 
+            // nameColumn
+            // 
+            nameColumn.DataPropertyName = "Name";
+            nameColumn.HeaderText = "Name";
+            nameColumn.Name = "nameColumn";
+            nameColumn.ReadOnly = true;
             // 
             // authorModelBindingSource
             // 
@@ -193,27 +207,27 @@
             serachTextBox.Size = new Size(232, 26);
             serachTextBox.TabIndex = 4;
             // 
-            // SearchBookButton
+            // SearchAuthorButton
             // 
-            SearchBookButton.BorderColor = Color.WhiteSmoke;
-            SearchBookButton.CustomizableEdges = customizableEdges5;
-            SearchBookButton.DisabledState.BorderColor = Color.DarkGray;
-            SearchBookButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            SearchBookButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            SearchBookButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            SearchBookButton.FillColor = Color.FromArgb(45, 175, 219);
-            SearchBookButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchBookButton.ForeColor = Color.White;
-            SearchBookButton.HoverState.FillColor = Color.FromArgb(43, 132, 180);
-            SearchBookButton.HoverState.ForeColor = Color.White;
-            SearchBookButton.Location = new Point(277, 55);
-            SearchBookButton.Name = "SearchBookButton";
-            SearchBookButton.Padding = new Padding(2);
-            SearchBookButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            SearchBookButton.Size = new Size(118, 26);
-            SearchBookButton.TabIndex = 2;
-            SearchBookButton.Text = "Serach";
-            SearchBookButton.Click += SearchBookButton_Click;
+            SearchAuthorButton.BorderColor = Color.WhiteSmoke;
+            SearchAuthorButton.CustomizableEdges = customizableEdges5;
+            SearchAuthorButton.DisabledState.BorderColor = Color.DarkGray;
+            SearchAuthorButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            SearchAuthorButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            SearchAuthorButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            SearchAuthorButton.FillColor = Color.FromArgb(45, 175, 219);
+            SearchAuthorButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SearchAuthorButton.ForeColor = Color.White;
+            SearchAuthorButton.HoverState.FillColor = Color.FromArgb(43, 132, 180);
+            SearchAuthorButton.HoverState.ForeColor = Color.White;
+            SearchAuthorButton.Location = new Point(277, 55);
+            SearchAuthorButton.Name = "SearchAuthorButton";
+            SearchAuthorButton.Padding = new Padding(2);
+            SearchAuthorButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            SearchAuthorButton.Size = new Size(118, 26);
+            SearchAuthorButton.TabIndex = 2;
+            SearchAuthorButton.Text = "Serach";
+            SearchAuthorButton.Click += SearchAuthorButton_Click;
             // 
             // AddBookButton
             // 
@@ -237,20 +251,6 @@
             AddBookButton.Text = "Add";
             AddBookButton.Click += AddBookButton_Click;
             // 
-            // idColumn
-            // 
-            idColumn.DataPropertyName = "Id";
-            idColumn.HeaderText = "Id";
-            idColumn.Name = "idColumn";
-            idColumn.ReadOnly = true;
-            // 
-            // nameColumn
-            // 
-            nameColumn.DataPropertyName = "Name";
-            nameColumn.HeaderText = "Name";
-            nameColumn.Name = "nameColumn";
-            nameColumn.ReadOnly = true;
-            // 
             // AuthorSettingsControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -273,7 +273,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView AuthorsDataGridView;
         private BindingSource authorModelBindingSource;
         private Guna.UI2.WinForms.Guna2TextBox serachTextBox;
-        private Guna.UI2.WinForms.Guna2Button SearchBookButton;
+        private Guna.UI2.WinForms.Guna2Button SearchAuthorButton;
         private Guna.UI2.WinForms.Guna2Button AddBookButton;
         private DataGridViewTextBoxColumn Id;
         private Guna.UI2.WinForms.Guna2Button RefreshButton;

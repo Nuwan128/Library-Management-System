@@ -33,7 +33,7 @@ namespace LibraryManagement.Desktop
             if (string.IsNullOrWhiteSpace(AutherNameTextBox.Text))
             {
                 MessageBox.Show("Please enter the author name", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                AutherNameTextBox.Focus();
             }
             else
             {
@@ -61,7 +61,7 @@ namespace LibraryManagement.Desktop
                     }
                     _authorsDataGridView.DataSource = null;
                     _authorsDataGridView.DataSource = await _db.LoadRecordsAsync<AuthorModel>("Authors");
-                    
+
                 }
                 catch (Exception ex)
                 {
