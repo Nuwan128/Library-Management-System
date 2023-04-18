@@ -19,10 +19,29 @@ namespace LibraryManagement.Desktop
                 {
                     config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                     config.AddUserSecrets(typeof(Program).Assembly);
+                    
+                    
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddTransient<IMongoDBData, MongoDBDataAccess>();
+
+                    var dbChoice = hostContext.Configuration.GetValue<string>("DbChoice");
+
+                  
+                    if (dbChoice == "MongoDb")
+                    {
+                        services.AddTransient<IMongoDBData, MongoDBDataAccess>();
+
+                    }
+                    else if (dbChoice == "MongoDbAtlas")
+                    {
+                        services.AddTransient<IMongoDBData, MongoDBDataAccess>();
+                    }
+                    else
+                    {
+                        services.AddTransient<IMongoDBData, MongoDBDataAccess>();
+                    }
+
                     services.AddTransient<Splash>();
                     services.AddTransient<LogIn>();
                     services.AddTransient<Staff>();

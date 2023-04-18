@@ -19,11 +19,11 @@ namespace LibraryManagement.Desktop
     {
         private readonly IMongoDBData _db;
         private readonly UserModel _user;
-        private readonly BooksControl booksControl = new BooksControl();
-        private readonly ReadersControl readersControl = new ReadersControl();
-        private readonly IssuedBooksControl issuedBooksControl = new IssuedBooksControl();
-        private readonly OverdueBooksControl overdueBooksControl = new OverdueBooksControl();
-        private readonly ReturnBooksControl returnBooksControl = new ReturnBooksControl();
+        private readonly BooksControl _booksControl;
+        private readonly ReadersControl _readersControl;
+        private readonly IssuedBooksControl _issuedBooksControl;
+        private readonly OverdueBooksControl _overdueBooksControl;
+        private readonly ReturnBooksControl _returnBooksControl;
         private readonly AuthorSettingsControl _authorSettingsControl;
         private readonly PublisherSettingsControl _publisherSettingsControl;
         private readonly CatergorySettingsControl _catergorySettingsControl;
@@ -39,6 +39,11 @@ namespace LibraryManagement.Desktop
             _authorSettingsControl = new AuthorSettingsControl(_db);
             _catergorySettingsControl = new CatergorySettingsControl(_db);
             _publisherSettingsControl = new PublisherSettingsControl(_db);
+            _booksControl = new BooksControl(_db);
+            _issuedBooksControl = new IssuedBooksControl(_db);
+            _readersControl = new ReadersControl(_db);
+            //_overdueBooksControl = new OverdueBooksControl(_db);
+            //_returnBooksControl = new ReturnBooksControl(_db);
             InitializeComponent();
             DisplayData();
         }
@@ -80,55 +85,44 @@ namespace LibraryManagement.Desktop
         private void BooksButton_Click(object sender, EventArgs e)
         {
 
-            MainPanel.Controls.Add(booksControl);
-            booksControl.Dock = DockStyle.Fill;
-            booksControl.BringToFront();
+            MainPanel.Controls.Add(_booksControl);
+            _booksControl.Dock = DockStyle.Fill;
+            _booksControl.BringToFront();
 
         }
-
         private void Staff_Load(object sender, EventArgs e)
         {
-            MainPanel.Controls.Add(booksControl);
-            booksControl.Dock = DockStyle.Fill;
-            booksControl.BringToFront();
+            MainPanel.Controls.Add(_booksControl);
+            _booksControl.Dock = DockStyle.Fill;
+            _booksControl.BringToFront();
 
         }
-
         private void ReadersButton_Click(object sender, EventArgs e)
         {
 
-            MainPanel.Controls.Add(readersControl);
-            readersControl.Dock = DockStyle.Fill;
-            readersControl.BringToFront();
+            MainPanel.Controls.Add(_readersControl);
+            _readersControl.Dock = DockStyle.Fill;
+            _readersControl.BringToFront();
 
         }
-
         private void IssueBooksButton_Click(object sender, EventArgs e)
         {
-            MainPanel.Controls.Add(issuedBooksControl);
-            issuedBooksControl.Dock = DockStyle.Fill;
-            issuedBooksControl.BringToFront();
+            MainPanel.Controls.Add(_issuedBooksControl);
+            _issuedBooksControl.Dock = DockStyle.Fill;
+            _issuedBooksControl.BringToFront();
         }
-
         private void ReturnBooksButton_Click(object sender, EventArgs e)
         {
-            MainPanel.Controls.Add(returnBooksControl);
-            returnBooksControl.Dock = DockStyle.Fill;
-            returnBooksControl.BringToFront();
+            MainPanel.Controls.Add(_returnBooksControl);
+            _returnBooksControl.Dock = DockStyle.Fill;
+            _returnBooksControl.BringToFront();
         }
-
         private void OverDueBooksButton_Click(object sender, EventArgs e)
         {
-            MainPanel.Controls.Add(overdueBooksControl);
-            overdueBooksControl.Dock = DockStyle.Fill;
-            overdueBooksControl.BringToFront();
+            MainPanel.Controls.Add(_overdueBooksControl);
+            _overdueBooksControl.Dock = DockStyle.Fill;
+            _overdueBooksControl.BringToFront();
         }
-
-        private void BookSettingsButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to log out?",
@@ -144,13 +138,11 @@ namespace LibraryManagement.Desktop
             }
 
         }
-
         private void ManageUserButton_Click(object sender, EventArgs e)
         {
             VerifyUser verifyUser = new VerifyUser(_user, MainPanel);
             verifyUser.ShowDialog();
         }
-
         private void SettingsDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (SettingsDropDown.SelectedItem.ToString())

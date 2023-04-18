@@ -12,12 +12,13 @@ namespace DataAccessLibrary.Models
     {
         [BsonId]
         public ObjectId Id { get; set; } = new ObjectId();
+        public int ReaderNo { get; set; }
         public string UserName { get; set; }
         public string Address { get; set; }
-        public List<string> PhoneNumbers { get; set; }
+        public List<string> PhoneNumbers { get; set; } = new List<string>();
 
         [BsonRepresentation(BsonType.ObjectId)]
-        public string UserId { get; set; }
+        public ObjectId UserId { get; set; }
 
 
     }

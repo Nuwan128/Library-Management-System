@@ -14,13 +14,8 @@ namespace DataAccessLibrary.Models
     {
         [BsonId]
         public ObjectId Id { get; set; } = new ObjectId();
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string BookId { get; set; }
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string ReaderId { get; set; }
-
+        public string ISBN { get; set; }
+        public int ReaderNo { get; set; }
         public DateTime ReserveDate { get; set; }
         public DateTime DueDate { get; set; }
 

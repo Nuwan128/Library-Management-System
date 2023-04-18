@@ -15,18 +15,17 @@ namespace DataAccessLibrary.Models
         [BsonId] 
         public ObjectId Id { get; set; } = new ObjectId();
         public string ISBN { get; set; }
-        public int AuthorNo { get; set; }
         public string Title { get; set; }
         public int Edition { get; set; }
         public int Count { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
-        public string CategoryId { get; set; }
+        public ObjectId CategoryId { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
-        public string AuthorId { get; set; }
+        public ObjectId AuthorId { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
-        public string PublisherId { get; set; }
+        public ObjectId PublisherId { get; set; }
     }
 }

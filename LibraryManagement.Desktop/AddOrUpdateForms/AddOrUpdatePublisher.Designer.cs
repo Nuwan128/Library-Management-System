@@ -134,7 +134,7 @@
             HeadingName.BackColor = Color.Transparent;
             HeadingName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             HeadingName.ForeColor = Color.FromArgb(43, 132, 180);
-            HeadingName.Location = new Point(170, 33);
+            HeadingName.Location = new Point(179, 34);
             HeadingName.Name = "HeadingName";
             HeadingName.Size = new Size(167, 31);
             HeadingName.TabIndex = 11;
@@ -162,12 +162,12 @@
             SavePublisherButton.FillColor = Color.FromArgb(45, 175, 219);
             SavePublisherButton.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             SavePublisherButton.ForeColor = Color.White;
-            SavePublisherButton.HoverState.FillColor = Color.Silver;
-            SavePublisherButton.HoverState.ForeColor = Color.Black;
-            SavePublisherButton.Location = new Point(205, 178);
+            SavePublisherButton.HoverState.FillColor = Color.FromArgb(43, 132, 180);
+            SavePublisherButton.HoverState.ForeColor = Color.White;
+            SavePublisherButton.Location = new Point(196, 179);
             SavePublisherButton.Name = "SavePublisherButton";
             SavePublisherButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            SavePublisherButton.Size = new Size(96, 26);
+            SavePublisherButton.Size = new Size(132, 26);
             SavePublisherButton.TabIndex = 10;
             SavePublisherButton.Text = "Save";
             SavePublisherButton.Click += SavePublisherButton_Click;

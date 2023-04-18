@@ -42,6 +42,7 @@ namespace LibraryManagement.Desktop
             }
             else
             {
+
                 switch (user.Role.ToLower())
                 {
                     case "admin":

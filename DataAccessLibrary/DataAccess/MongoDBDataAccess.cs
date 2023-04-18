@@ -1,13 +1,10 @@
-﻿using DataAccessLibrary.Models;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+
 using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace DataAccessLibrary.DataAccess
 {
@@ -17,7 +14,6 @@ namespace DataAccessLibrary.DataAccess
 
         public MongoDBDataAccess(IConfiguration config)
         {
-
             var connectionString = config.GetConnectionString("MongoDb");
             var client = new MongoClient(connectionString);
             _db = client.GetDatabase("LibraryManagementSystemDB");
@@ -73,6 +69,15 @@ namespace DataAccessLibrary.DataAccess
 
         }
 
+        public async Task<T> SearchOneAsync<T>(string table, string fieldName, string query)
+        {
+
+            var collection = _db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Regex(fieldName, new BsonRegularExpression($"{query}"));
+            var result = await collection.FindAsync(filter);
+            return await result.FirstOrDefaultAsync();
+
+        }
 
     }
 }

@@ -60,12 +60,12 @@
             SaveAuthorButton.FillColor = Color.FromArgb(45, 175, 219);
             SaveAuthorButton.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             SaveAuthorButton.ForeColor = Color.White;
-            SaveAuthorButton.HoverState.FillColor = Color.Silver;
-            SaveAuthorButton.HoverState.ForeColor = Color.Black;
-            SaveAuthorButton.Location = new Point(205, 142);
+            SaveAuthorButton.HoverState.FillColor = Color.FromArgb(43, 132, 180);
+            SaveAuthorButton.HoverState.ForeColor = Color.White;
+            SaveAuthorButton.Location = new Point(185, 142);
             SaveAuthorButton.Name = "SaveAuthorButton";
             SaveAuthorButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            SaveAuthorButton.Size = new Size(96, 26);
+            SaveAuthorButton.Size = new Size(118, 26);
             SaveAuthorButton.TabIndex = 6;
             SaveAuthorButton.Text = "Save";
             SaveAuthorButton.Click += SaveAuthorButton_Click;

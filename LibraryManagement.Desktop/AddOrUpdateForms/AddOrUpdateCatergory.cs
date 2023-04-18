@@ -25,6 +25,11 @@ namespace LibraryManagement.Desktop
             _db = db;
             _id = id;
             _catergoryDataGridView = CatergoryDataGridView;
+            if (!(id == ObjectId.Empty))
+            {
+                HeadingName.Text = "Update Catergory";
+                SaveCatergoryButton.Text = "Update";
+            }
         }
 
         private async void SaveCatergoryButton_Click(object sender, EventArgs e)

@@ -158,12 +158,12 @@
             SaveCatergoryButton.FillColor = Color.FromArgb(45, 175, 219);
             SaveCatergoryButton.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             SaveCatergoryButton.ForeColor = Color.White;
-            SaveCatergoryButton.HoverState.FillColor = Color.Silver;
-            SaveCatergoryButton.HoverState.ForeColor = Color.Black;
-            SaveCatergoryButton.Location = new Point(205, 162);
+            SaveCatergoryButton.HoverState.FillColor = Color.FromArgb(43, 132, 180);
+            SaveCatergoryButton.HoverState.ForeColor = Color.White;
+            SaveCatergoryButton.Location = new Point(204, 162);
             SaveCatergoryButton.Name = "SaveCatergoryButton";
             SaveCatergoryButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            SaveCatergoryButton.Size = new Size(96, 26);
+            SaveCatergoryButton.Size = new Size(121, 26);
             SaveCatergoryButton.TabIndex = 10;
             SaveCatergoryButton.Text = "Save";
             SaveCatergoryButton.Click += SaveCatergoryButton_Click;

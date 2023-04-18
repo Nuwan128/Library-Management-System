@@ -25,6 +25,11 @@ namespace LibraryManagement.Desktop
             _id = id;
             _publisherDataGridView = PublisherDataGridView;
             InitializeComponent();
+            if (!(id == ObjectId.Empty))
+            {
+                HeadingName.Text = "Update Publisher";
+                SavePublisherButton.Text = "Update";
+            }
         }
 
         private async void SavePublisherButton_Click(object sender, EventArgs e)

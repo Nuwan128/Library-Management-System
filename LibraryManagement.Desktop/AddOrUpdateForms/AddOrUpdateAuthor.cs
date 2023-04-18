@@ -25,6 +25,11 @@ namespace LibraryManagement.Desktop
             _id = id;
             _authorsDataGridView = AuthorsDataGridView;
             InitializeComponent();
+            if (!(id == ObjectId.Empty))
+            {
+                HeadingName.Text = "Update Author";
+                SaveAuthorButton.Text = "Update";
+            }
         }
 
         private async void SaveAuthorButton_Click(object sender, EventArgs e)

@@ -83,6 +83,7 @@
             UserNameLabel.Name = "UserNameLabel";
             UserNameLabel.Size = new Size(102, 22);
             UserNameLabel.TabIndex = 1;
+            UserNameLabel.TabStop = false;
             UserNameLabel.Text = "User Name :";
             // 
             // PasswordTextBox
@@ -115,6 +116,7 @@
             PasswordLable.Name = "PasswordLable";
             PasswordLable.Size = new Size(90, 22);
             PasswordLable.TabIndex = 1;
+            PasswordLable.TabStop = false;
             PasswordLable.Text = "Password :";
             // 
             // LogInButton
