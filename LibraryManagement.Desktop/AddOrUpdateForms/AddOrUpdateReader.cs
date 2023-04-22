@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace LibraryManagement.Desktop.AddOrUpdateForms;
 
@@ -87,9 +88,24 @@ public partial class AddOrUpdateReader : Form
 
         try
         {
-            await _db.InsertRecordAsync<ReaderModel>("Readers", _reader);
-            this.Hide();
-            MessageBox.Show("Reader added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (_id == ObjectId.Empty)
+            {
+
+                await _db.InsertRecordAsync<ReaderModel>("Readers", _reader);
+                this.Hide();
+                MessageBox.Show("Reader added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                _reader.Id = _id;
+                await _db.UpsertRecordAsync<ReaderModel>("Readers", _reader.Id, _reader);
+                this.Hide();
+                MessageBox.Show("Reader updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            _readerDataGridView.DataSource = null;
             _readerDataGridView.DataSource = await _db.LoadRecordsAsync<ReaderModel>("Readers");
         }
         catch (Exception ex)

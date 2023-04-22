@@ -25,10 +25,10 @@ namespace LibraryManagement.Desktop
         {
             _db = db;
             _id = id;
+            _book = new BookModel();
             _bookDataGridView = bookDataGridView;
             InitializeComponent();
             DisplayData();
-            _book = new BookModel();
             if (!(id == ObjectId.Empty))
             {
                 HeadingName.Text = "Update Book";
@@ -166,10 +166,24 @@ namespace LibraryManagement.Desktop
 
             try
             {
+                if (_id == ObjectId.Empty)
+                {
 
-                await _db.InsertRecordAsync<BookModel>("Books", _book);
-                this.Hide();
-                MessageBox.Show("Author added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await _db.InsertRecordAsync<BookModel>("Books", _book);
+                    this.Hide();
+                    MessageBox.Show("Book added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    _book.Id = _id;
+                    await _db.UpsertRecordAsync<BookModel>("Books", _book.Id, _book);
+                    this.Hide();
+                    MessageBox.Show("Book updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+                _bookDataGridView.DataSource = null;
                 _bookDataGridView.DataSource = await _db.LoadRecordsAsync<BookModel>("Books");
             }
             catch (Exception)

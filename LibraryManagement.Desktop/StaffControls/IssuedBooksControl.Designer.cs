@@ -46,11 +46,11 @@
             IssuedBookDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             IssuedBooksDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            issueBookModelBindingSource = new BindingSource(components);
             serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
             AddIssuedBookButton = new Guna.UI2.WinForms.Guna2Button();
-            issueBookModelBindingSource = new BindingSource(components);
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            idColumn = new DataGridViewTextBoxColumn();
             iSBNDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             readerNoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             reserveDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -121,7 +121,7 @@
             IssuedBooksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             IssuedBooksDataGridView.ColumnHeadersHeight = 40;
             IssuedBooksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            IssuedBooksDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, iSBNDataGridViewTextBoxColumn, readerNoDataGridViewTextBoxColumn, reserveDateDataGridViewTextBoxColumn, dueDateDataGridViewTextBoxColumn });
+            IssuedBooksDataGridView.Columns.AddRange(new DataGridViewColumn[] { idColumn, iSBNDataGridViewTextBoxColumn, readerNoDataGridViewTextBoxColumn, reserveDateDataGridViewTextBoxColumn, dueDateDataGridViewTextBoxColumn });
             IssuedBooksDataGridView.DataSource = issueBookModelBindingSource;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(213, 218, 223);
@@ -170,6 +170,10 @@
             IssuedBooksDataGridView.ThemeStyle.RowsStyle.Height = 30;
             IssuedBooksDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             IssuedBooksDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            // 
+            // issueBookModelBindingSource
+            // 
+            issueBookModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.IssueBookModel);
             // 
             // serachTextBox
             // 
@@ -235,16 +239,12 @@
             AddIssuedBookButton.Text = "Add";
             AddIssuedBookButton.Click += AddIssuedBookButton_Click;
             // 
-            // issueBookModelBindingSource
+            // idColumn
             // 
-            issueBookModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.IssueBookModel);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
             // 
             // iSBNDataGridViewTextBoxColumn
             // 
@@ -298,11 +298,11 @@
         private Guna.UI2.WinForms.Guna2TextBox serachTextBox;
         private Guna.UI2.WinForms.Guna2Button SearchBookButton;
         private Guna.UI2.WinForms.Guna2Button AddIssuedBookButton;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private BindingSource issueBookModelBindingSource;
+        private DataGridViewTextBoxColumn idColumn;
         private DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn readerNoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn reserveDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
-        private BindingSource issueBookModelBindingSource;
     }
 }

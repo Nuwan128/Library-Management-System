@@ -47,7 +47,7 @@ namespace LibraryManagement.Desktop
                     services.AddTransient<Staff>();
                     services.AddTransient<Reader>();
                     services.AddTransient<VerifyUser>(); 
-                    services.AddTransient<AddOrUpdateAuthor>();
+                    
 
 
                 });

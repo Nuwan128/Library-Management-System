@@ -49,6 +49,8 @@ namespace LibraryManagement.Desktop
 
 
             };
+            reserveDateDataGridViewTextBoxColumn.DefaultCellStyle.Format = "MM-dd-yyyy";
+            dueDateDataGridViewTextBoxColumn.DefaultCellStyle.Format = "MM-dd-yyyy";
 
             IssuedBooksDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -57,12 +59,12 @@ namespace LibraryManagement.Desktop
 
             IssuedBooksDataGridView.CellFormatting += IssuedBooksDataGridView_CellFormatting;
             IssuedBooksDataGridView.CellContentClick += IssuedBooksDataGridView_CellContentClick;
-            IssuedBooksDataGridView.DataSource = await _db.LoadRecordsAsync<IssueBookModel>("IssuedBooks");
+
+            IssuedBooksDataGridView.DataSource = await _db.LoadRecordsAsync<IssueBookModel>("IssueBooks");
         }
 
-        private void IssuedBooksDataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+        private void IssuedBooksDataGridView_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
         {
-
             if (IssuedBooksDataGridView.Columns[e.ColumnIndex].Name == "UpdateButtonColumn" && e.RowIndex >= 0)
             {
                 var cell = IssuedBooksDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
@@ -83,10 +85,11 @@ namespace LibraryManagement.Desktop
                 cell.Style.SelectionBackColor = Color.DarkRed;
                 cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+            
         }
-
-        private async void IssuedBooksDataGridView_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
+        private async void IssuedBooksDataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
+
             var idCellValue = IssuedBooksDataGridView.Rows[e.RowIndex].Cells["idColumn"].Value.ToString();
             var id = ObjectId.Parse(idCellValue);
 
@@ -140,6 +143,7 @@ namespace LibraryManagement.Desktop
             }
         }
 
+
         private void AddIssuedBookButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Do you want to issue a book",
@@ -171,17 +175,17 @@ namespace LibraryManagement.Desktop
         private async void SearchBookButton_Click(object sender, EventArgs e)
         {
 
-            string name = serachTextBox.Text;
-            if (string.IsNullOrWhiteSpace(name))
+            string ISBN = serachTextBox.Text;
+            if (string.IsNullOrWhiteSpace(ISBN))
             {
-                MessageBox.Show("Please Enter Title", "Empty Feild", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please Enter ISBN", "Empty Feild", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 serachTextBox.Text = "";
             }
             else
             {
                 try
                 {
-                    IssuedBooksDataGridView.DataSource = await _db.SearchAsync<IssueBookModel>("IssueBooks", "Title", name);
+                    IssuedBooksDataGridView.DataSource = await _db.SearchAsync<IssueBookModel>("IssueBooks", "ISBN", ISBN);
                 }
                 catch (Exception)
                 {
