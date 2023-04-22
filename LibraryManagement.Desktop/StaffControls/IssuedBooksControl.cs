@@ -85,7 +85,7 @@ namespace LibraryManagement.Desktop
                 cell.Style.SelectionBackColor = Color.DarkRed;
                 cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-            
+
         }
         private async void IssuedBooksDataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {

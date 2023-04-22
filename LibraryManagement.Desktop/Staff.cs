@@ -42,8 +42,8 @@ namespace LibraryManagement.Desktop
             _booksControl = new BooksControl(_db);
             _issuedBooksControl = new IssuedBooksControl(_db);
             _readersControl = new ReadersControl(_db);
-            //_overdueBooksControl = new OverdueBooksControl(_db);
-            //_returnBooksControl = new ReturnBooksControl(_db);
+            _returnBooksControl = new ReturnBooksControl(_db);
+            _overdueBooksControl = new OverdueBooksControl(_db);
             InitializeComponent();
             DisplayData();
         }

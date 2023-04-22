@@ -46,15 +46,15 @@
             ReaderDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             ReadersDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            readerModelBindingSource = new BindingSource(components);
-            serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
-            AddReaderButton = new Guna.UI2.WinForms.Guna2Button();
             idColumn = new DataGridViewTextBoxColumn();
             readerNoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             userIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            readerModelBindingSource = new BindingSource(components);
+            serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
+            AddReaderButton = new Guna.UI2.WinForms.Guna2Button();
             ReaderDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ReadersDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)readerModelBindingSource).BeginInit();
@@ -171,6 +171,41 @@
             ReadersDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             ReadersDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             // 
+            // idColumn
+            // 
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            // 
+            // readerNoDataGridViewTextBoxColumn
+            // 
+            readerNoDataGridViewTextBoxColumn.DataPropertyName = "ReaderNo";
+            readerNoDataGridViewTextBoxColumn.HeaderText = "ReaderNo";
+            readerNoDataGridViewTextBoxColumn.Name = "readerNoDataGridViewTextBoxColumn";
+            readerNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            userNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userIdDataGridViewTextBoxColumn
+            // 
+            userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+            userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
+            userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            userIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // readerModelBindingSource
             // 
             readerModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.ReaderModel);
@@ -238,41 +273,6 @@
             AddReaderButton.TabIndex = 8;
             AddReaderButton.Text = "Add";
             AddReaderButton.Click += AddReaderButton_Click;
-            // 
-            // idColumn
-            // 
-            idColumn.DataPropertyName = "Id";
-            idColumn.HeaderText = "Id";
-            idColumn.Name = "idColumn";
-            idColumn.ReadOnly = true;
-            // 
-            // readerNoDataGridViewTextBoxColumn
-            // 
-            readerNoDataGridViewTextBoxColumn.DataPropertyName = "ReaderNo";
-            readerNoDataGridViewTextBoxColumn.HeaderText = "ReaderNo";
-            readerNoDataGridViewTextBoxColumn.Name = "readerNoDataGridViewTextBoxColumn";
-            readerNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-            userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            userNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userIdDataGridViewTextBoxColumn
-            // 
-            userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            userIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ReadersControl
             // 

@@ -46,18 +46,16 @@
             BookDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             BooksDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            idColumn = new DataGridViewTextBoxColumn();
+            iSBNDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            titleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            countDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
             AddBookButton = new Guna.UI2.WinForms.Guna2Button();
-            bookModelBindingSource1 = new BindingSource(components);
-            countDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            titleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            iSBNDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            idColumn = new DataGridViewTextBoxColumn();
             bookModelBindingSource = new BindingSource(components);
             BookDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BooksDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bookModelBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookModelBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -110,6 +108,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(45, 175, 219);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             BooksDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            BooksDataGridView.AutoGenerateColumns = false;
             BooksDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(43, 132, 180);
@@ -122,6 +121,7 @@
             BooksDataGridView.ColumnHeadersHeight = 40;
             BooksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             BooksDataGridView.Columns.AddRange(new DataGridViewColumn[] { idColumn, iSBNDataGridViewTextBoxColumn, titleDataGridViewTextBoxColumn, countDataGridViewTextBoxColumn });
+            BooksDataGridView.DataSource = bookModelBindingSource;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(213, 218, 223);
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -169,6 +169,34 @@
             BooksDataGridView.ThemeStyle.RowsStyle.Height = 30;
             BooksDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             BooksDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            // 
+            // idColumn
+            // 
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            iSBNDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            countDataGridViewTextBoxColumn.HeaderText = "Count";
+            countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            countDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // serachTextBox
             // 
@@ -234,38 +262,6 @@
             AddBookButton.Text = "Add";
             AddBookButton.Click += AddBookButton_Click;
             // 
-            // bookModelBindingSource1
-            // 
-            bookModelBindingSource1.DataSource = typeof(DataAccessLibrary.Models.BookModel);
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            countDataGridViewTextBoxColumn.HeaderText = "Count";
-            countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            countDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            iSBNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idColumn
-            // 
-            idColumn.DataPropertyName = "Id";
-            idColumn.HeaderText = "Id";
-            idColumn.Name = "idColumn";
-            idColumn.ReadOnly = true;
-            // 
             // bookModelBindingSource
             // 
             bookModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.BookModel);
@@ -282,7 +278,6 @@
             Size = new Size(958, 491);
             BookDetailsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BooksDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bookModelBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookModelBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -299,7 +294,6 @@
         private DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
-        private BindingSource bookModelBindingSource1;
         private BindingSource bookModelBindingSource;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLibrary.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace LibraryManagement.Desktop
 {
     public partial class ReturnBooksControl : UserControl
     {
-        public ReturnBooksControl()
+        private readonly IMongoDBData _db;
+
+        public ReturnBooksControl(IMongoDBData db)
         {
             InitializeComponent();
+            _db = db;
         }
     }
 }

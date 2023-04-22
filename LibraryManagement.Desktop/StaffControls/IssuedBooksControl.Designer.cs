@@ -46,15 +46,15 @@
             IssuedBookDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             IssuedBooksDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            issueBookModelBindingSource = new BindingSource(components);
-            serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
-            AddIssuedBookButton = new Guna.UI2.WinForms.Guna2Button();
             idColumn = new DataGridViewTextBoxColumn();
             iSBNDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             readerNoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             reserveDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dueDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            issueBookModelBindingSource = new BindingSource(components);
+            serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
+            AddIssuedBookButton = new Guna.UI2.WinForms.Guna2Button();
             IssuedBookDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IssuedBooksDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)issueBookModelBindingSource).BeginInit();
@@ -113,7 +113,7 @@
             IssuedBooksDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(43, 132, 180);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(43, 132, 180);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -138,7 +138,7 @@
             IssuedBooksDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(213, 218, 223);
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(213, 218, 223);
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
@@ -170,6 +170,41 @@
             IssuedBooksDataGridView.ThemeStyle.RowsStyle.Height = 30;
             IssuedBooksDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             IssuedBooksDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            // 
+            // idColumn
+            // 
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "Id";
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            // 
+            // iSBNDataGridViewTextBoxColumn
+            // 
+            iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            iSBNDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // readerNoDataGridViewTextBoxColumn
+            // 
+            readerNoDataGridViewTextBoxColumn.DataPropertyName = "ReaderNo";
+            readerNoDataGridViewTextBoxColumn.HeaderText = "ReaderNo";
+            readerNoDataGridViewTextBoxColumn.Name = "readerNoDataGridViewTextBoxColumn";
+            readerNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reserveDateDataGridViewTextBoxColumn
+            // 
+            reserveDateDataGridViewTextBoxColumn.DataPropertyName = "ReserveDate";
+            reserveDateDataGridViewTextBoxColumn.HeaderText = "ReserveDate";
+            reserveDateDataGridViewTextBoxColumn.Name = "reserveDateDataGridViewTextBoxColumn";
+            reserveDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
+            dueDateDataGridViewTextBoxColumn.HeaderText = "DueDate";
+            dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            dueDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // issueBookModelBindingSource
             // 
@@ -238,41 +273,6 @@
             AddIssuedBookButton.TabIndex = 8;
             AddIssuedBookButton.Text = "Add";
             AddIssuedBookButton.Click += AddIssuedBookButton_Click;
-            // 
-            // idColumn
-            // 
-            idColumn.DataPropertyName = "Id";
-            idColumn.HeaderText = "Id";
-            idColumn.Name = "idColumn";
-            idColumn.ReadOnly = true;
-            // 
-            // iSBNDataGridViewTextBoxColumn
-            // 
-            iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            iSBNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // readerNoDataGridViewTextBoxColumn
-            // 
-            readerNoDataGridViewTextBoxColumn.DataPropertyName = "ReaderNo";
-            readerNoDataGridViewTextBoxColumn.HeaderText = "ReaderNo";
-            readerNoDataGridViewTextBoxColumn.Name = "readerNoDataGridViewTextBoxColumn";
-            readerNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reserveDateDataGridViewTextBoxColumn
-            // 
-            reserveDateDataGridViewTextBoxColumn.DataPropertyName = "ReserveDate";
-            reserveDateDataGridViewTextBoxColumn.HeaderText = "ReserveDate";
-            reserveDateDataGridViewTextBoxColumn.Name = "reserveDateDataGridViewTextBoxColumn";
-            reserveDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dueDateDataGridViewTextBoxColumn
-            // 
-            dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
-            dueDateDataGridViewTextBoxColumn.HeaderText = "DueDate";
-            dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
-            dueDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // IssuedBooksControl
             // 
