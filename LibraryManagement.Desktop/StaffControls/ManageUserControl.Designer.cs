@@ -29,32 +29,30 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             MangeUserDetailsGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             RefreshButton = new Guna.UI2.WinForms.Guna2Button();
             UsersDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            userModelBindingSource = new BindingSource(components);
             serachTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             SearchBookButton = new Guna.UI2.WinForms.Guna2Button();
             AddUserButton = new Guna.UI2.WinForms.Guna2Button();
-            userModelBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             roleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            profilePictureDataGridViewImageColumn = new DataGridViewImageColumn();
             MangeUserDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UsersDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userModelBindingSource).BeginInit();
@@ -67,13 +65,13 @@
             MangeUserDetailsGroupBox.Controls.Add(serachTextBox);
             MangeUserDetailsGroupBox.Controls.Add(SearchBookButton);
             MangeUserDetailsGroupBox.Controls.Add(AddUserButton);
-            MangeUserDetailsGroupBox.CustomizableEdges = customizableEdges19;
+            MangeUserDetailsGroupBox.CustomizableEdges = customizableEdges9;
             MangeUserDetailsGroupBox.FillColor = SystemColors.ButtonFace;
             MangeUserDetailsGroupBox.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             MangeUserDetailsGroupBox.ForeColor = SystemColors.ControlText;
             MangeUserDetailsGroupBox.Location = new Point(12, 11);
             MangeUserDetailsGroupBox.Name = "MangeUserDetailsGroupBox";
-            MangeUserDetailsGroupBox.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            MangeUserDetailsGroupBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
             MangeUserDetailsGroupBox.Size = new Size(935, 466);
             MangeUserDetailsGroupBox.TabIndex = 2;
             MangeUserDetailsGroupBox.Text = "Manage User Details";
@@ -83,7 +81,7 @@
             RefreshButton.BackColor = Color.FromArgb(45, 175, 219);
             RefreshButton.BackgroundImage = Properties.Resources.refresh;
             RefreshButton.BackgroundImageLayout = ImageLayout.Stretch;
-            RefreshButton.CustomizableEdges = customizableEdges11;
+            RefreshButton.CustomizableEdges = customizableEdges1;
             RefreshButton.DisabledState.BorderColor = Color.DarkGray;
             RefreshButton.DisabledState.CustomBorderColor = Color.DarkGray;
             RefreshButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -93,56 +91,57 @@
             RefreshButton.ForeColor = Color.White;
             RefreshButton.Location = new Point(412, 55);
             RefreshButton.Name = "RefreshButton";
-            RefreshButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            RefreshButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
             RefreshButton.Size = new Size(35, 26);
             RefreshButton.TabIndex = 11;
+            RefreshButton.Click += RefreshButton_Click;
             // 
             // UsersDataGridView
             // 
             UsersDataGridView.AllowUserToAddRows = false;
             UsersDataGridView.AllowUserToDeleteRows = false;
             UsersDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(231, 241, 250);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(45, 175, 219);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            UsersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(231, 241, 250);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(45, 175, 219);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            UsersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             UsersDataGridView.AutoGenerateColumns = false;
             UsersDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(43, 132, 180);
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(43, 132, 180);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            UsersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(43, 132, 180);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(43, 132, 180);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            UsersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             UsersDataGridView.ColumnHeadersHeight = 40;
             UsersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            UsersDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, userNameDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, roleDataGridViewTextBoxColumn, profilePictureDataGridViewImageColumn });
+            UsersDataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, userNameDataGridViewTextBoxColumn, roleDataGridViewTextBoxColumn });
             UsersDataGridView.DataSource = userModelBindingSource;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(213, 218, 223);
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(45, 175, 219);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            UsersDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(213, 218, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(45, 175, 219);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            UsersDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             UsersDataGridView.GridColor = Color.FromArgb(50, 56, 62);
             UsersDataGridView.Location = new Point(28, 100);
             UsersDataGridView.Name = "UsersDataGridView";
             UsersDataGridView.ReadOnly = true;
             UsersDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(213, 218, 223);
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(213, 218, 223);
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            UsersDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(213, 218, 223);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(213, 218, 223);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            UsersDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             UsersDataGridView.RowHeadersVisible = false;
             UsersDataGridView.RowTemplate.Height = 30;
             UsersDataGridView.Size = new Size(876, 350);
@@ -170,9 +169,13 @@
             UsersDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(45, 175, 219);
             UsersDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             // 
+            // userModelBindingSource
+            // 
+            userModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.UserModel);
+            // 
             // serachTextBox
             // 
-            serachTextBox.CustomizableEdges = customizableEdges13;
+            serachTextBox.CustomizableEdges = customizableEdges3;
             serachTextBox.DefaultText = "";
             serachTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             serachTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -186,14 +189,14 @@
             serachTextBox.PasswordChar = '\0';
             serachTextBox.PlaceholderText = "";
             serachTextBox.SelectedText = "";
-            serachTextBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            serachTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             serachTextBox.Size = new Size(232, 26);
             serachTextBox.TabIndex = 9;
             // 
             // SearchBookButton
             // 
             SearchBookButton.BorderColor = Color.WhiteSmoke;
-            SearchBookButton.CustomizableEdges = customizableEdges15;
+            SearchBookButton.CustomizableEdges = customizableEdges5;
             SearchBookButton.DisabledState.BorderColor = Color.DarkGray;
             SearchBookButton.DisabledState.CustomBorderColor = Color.DarkGray;
             SearchBookButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -206,15 +209,16 @@
             SearchBookButton.Location = new Point(277, 55);
             SearchBookButton.Name = "SearchBookButton";
             SearchBookButton.Padding = new Padding(2);
-            SearchBookButton.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            SearchBookButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             SearchBookButton.Size = new Size(118, 26);
             SearchBookButton.TabIndex = 7;
             SearchBookButton.Text = "Serach";
+            SearchBookButton.Click += SearchBookButton_Click;
             // 
             // AddUserButton
             // 
             AddUserButton.BorderColor = Color.WhiteSmoke;
-            AddUserButton.CustomizableEdges = customizableEdges17;
+            AddUserButton.CustomizableEdges = customizableEdges7;
             AddUserButton.DisabledState.BorderColor = Color.DarkGray;
             AddUserButton.DisabledState.CustomBorderColor = Color.DarkGray;
             AddUserButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -227,14 +231,11 @@
             AddUserButton.Location = new Point(808, 55);
             AddUserButton.Name = "AddUserButton";
             AddUserButton.Padding = new Padding(2);
-            AddUserButton.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            AddUserButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
             AddUserButton.Size = new Size(96, 26);
             AddUserButton.TabIndex = 8;
             AddUserButton.Text = "Add";
-            // 
-            // userModelBindingSource
-            // 
-            userModelBindingSource.DataSource = typeof(DataAccessLibrary.Models.UserModel);
+            AddUserButton.Click += AddUserButton_Click;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -250,26 +251,12 @@
             userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             userNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // roleDataGridViewTextBoxColumn
             // 
             roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
             roleDataGridViewTextBoxColumn.HeaderText = "Role";
             roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             roleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profilePictureDataGridViewImageColumn
-            // 
-            profilePictureDataGridViewImageColumn.DataPropertyName = "ProfilePicture";
-            profilePictureDataGridViewImageColumn.HeaderText = "ProfilePicture";
-            profilePictureDataGridViewImageColumn.Name = "profilePictureDataGridViewImageColumn";
-            profilePictureDataGridViewImageColumn.ReadOnly = true;
             // 
             // ManageUserControl
             // 
@@ -295,11 +282,9 @@
         private Guna.UI2.WinForms.Guna2TextBox serachTextBox;
         private Guna.UI2.WinForms.Guna2Button SearchBookButton;
         private Guna.UI2.WinForms.Guna2Button AddUserButton;
+        private BindingSource userModelBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private DataGridViewImageColumn profilePictureDataGridViewImageColumn;
-        private BindingSource userModelBindingSource;
     }
 }

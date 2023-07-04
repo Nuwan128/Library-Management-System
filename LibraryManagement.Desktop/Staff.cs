@@ -140,7 +140,7 @@ namespace LibraryManagement.Desktop
         }
         private void ManageUserButton_Click(object sender, EventArgs e)
         {
-            VerifyUser verifyUser = new VerifyUser(_user, MainPanel);
+            VerifyUser verifyUser = new VerifyUser(_db,_user, MainPanel);
             verifyUser.ShowDialog();
         }
         private void SettingsDropDown_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using DataAccessLibrary.Models;
+﻿using DataAccessLibrary.DataAccess;
+using DataAccessLibrary.Models;
 using Guna.UI2.WinForms;
 using LibraryManagement.Desktop.StaffControls;
 using System;
@@ -15,16 +16,18 @@ namespace LibraryManagement.Desktop
 {
     public partial class VerifyUser : Form
     {
+      
         private readonly UserModel _user;
         private readonly Guna2Panel _panel;
-        private readonly ManageUserControl manageUserControl = new ManageUserControl();
+        private readonly ManageUserControl _manageUserControl;
 
-        public VerifyUser(UserModel user, Guna2Panel panel)
+        public VerifyUser(IMongoDBData db,UserModel user, Guna2Panel panel)
         {
             InitializeComponent();
             _user = user;
             _panel = panel;
             name.Text = _user.UserName;
+            _manageUserControl = new ManageUserControl(db);
         }
 
         private void VerifyButton_Click(object sender, EventArgs e)
@@ -33,9 +36,9 @@ namespace LibraryManagement.Desktop
             {
                 this.Hide();
 
-                _panel.Controls.Add(manageUserControl);
-                manageUserControl.Dock = DockStyle.Fill;
-                manageUserControl.BringToFront();
+                _panel.Controls.Add(_manageUserControl);
+                _manageUserControl.Dock = DockStyle.Fill;
+                _manageUserControl.BringToFront();
             }
             else
             {
